@@ -1,0 +1,41 @@
+.movieRow {
+    cursor: pointer;
+    position: relative;
+    margin: 15px auto;
+    width: 190px;
+    border: none;
+}
+
+.movie-image {
+    
+    position: relative;
+}
+
+.movie-content {
+    position: absolute;
+    height: 100%;
+    color: var(--text-white-700);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .2s;
+}
+
+.movie-content:hover {
+    background: var(--bg-black-900);
+    color: var(--text-white-700)E;
+    opacity: 0.8;
+    height: 100%;
+    width: 100%;
+}
+
+.behind {
+    pointer-events:none;
+}
+
+
+
+.movie-info-container {
+  position: absolute;
+  bottom: 20px;
+}
+
