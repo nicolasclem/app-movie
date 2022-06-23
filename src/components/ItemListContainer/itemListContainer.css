@@ -2,7 +2,9 @@
 {
     display: flex;
     justify-content: center;
-    align-items:flex-end ;
+    align-items:center ;
+    margin: auto;
+    width: 300px;
     height: 6vh;
     background-color: var(--bg-grey-100);
     border-radius: 5px;
@@ -12,4 +14,11 @@
 .starFilter h5
 {
     color:var(--bg-black-50)
+}
+
+.container_itemList
+{
+    margin: auto;
+    margin-top: 20px;
+    padding: 30px;
 }

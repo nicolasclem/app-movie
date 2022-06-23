@@ -1,8 +1,4 @@
 .container__bg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
     background: 
     linear-gradient(
     rgba(0, 0, 0, 0.5),
@@ -10,7 +6,6 @@
     ),
     url("../../assets/img/fondoWall.jpg");
     background-size: cover;
-    width: 98vw;
     height: 70vh;
     position: relative;
     color: var(--text-white-900);

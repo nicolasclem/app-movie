@@ -1,8 +1,12 @@
 import React from 'react'
+import '.movieCardDetail.css'
+
 
 const MovieCardDetail = () => {
   return (
-    <div>MovieCardDetail</div>
+    <div>
+      Hola MovieCARDDetail
+    </div>
   )
 }
 

@@ -5,71 +5,97 @@ import ItemListContainer from '../../components/ItemListContainer/ItemListContai
 import Search from '../../components/Search/Search'
 
 
+
 const Home = () => {
   const [movieSearch, setMovieSearch]=useState([])
   const [input, setInput]=useState('')
   const [back, setBack]=useState(false)
   const [movieInit , setMovieInit]=useState([])
   const [star ,setStar]=useState(0)
-  const [movieStar,setMovieStar]=useState([])
+
     
-    
 
-  const dataInit= async()=>{
-      const {data} = await  axios.get(URL.MovieFav)
-      setMovieInit(data.results);
-  }
-
-  const dataStarFilter= async()=>{
-    const {data} = await  axios.get(`${URL.MovieStar}${parseFloat(star)*2}`)
-    console.log(`${URL.MovieStar}${parseFloat(star)*2}`);
-    setMovieStar(data.results);
-    console.log(movieStar);
-
-}
+  const dataInit = async () => {
+    if(star > 0){
+    const { data } = await axios.get(URL.MovieFav(star))
+    setMovieInit(data.results);
+    }
+    else{
+      const { data } = await axios.get(URL.MovieInit)
       
-     
-  
-  const handleBack= async (e)=>{
+    setMovieInit(data.results);
+    }
+  }
+
+
+  const dataSearch = async () => {
+    if (input) {
+      const { data } = await axios.get(URL.MovieSeacrh(input))
+      setMovieSearch(data.results);
+    }
+  }
+
+
+
+
+  const handleBack = () => {
+     setStar(0)
+     setBack(false)
+  }
+
+  const handleClick = async (e) => {
     e.preventDefault();
-      setBack(false)
+    if(input!==''){
+    setBack(true)
+    await dataSearch()
+    setInput('')
+    }
+    else{
+      console.log("mandar mensajito q tiene q buscar");
+    }
+  }
+
+  const handleChange = (e) => {
+    setInput(e.target.value)
 
   }
 
-  const handleClick= async (e)=>{
-      e.preventDefault();
-      const {data} = await axios.get(`${URL.MovieSeacrh}${input}`)
-  
-  setMovieSearch(data.results);
-  setBack(true)
-  setInput('')
-  
-}
+  const handleStar = (e) => {
+    if (e.target.value !== star){
+    setStar(e.target.value)
+    }else{
+      setStar(0)
+    }
+  }
 
-const handleChange =(e)=>{
-  setInput(e.target.value);
 
-}
+  useEffect(() => {
+    dataInit()
+    // eslint-disable-next-line
+  }, [star,back])
 
-const handleStar=(e)=>{
-  setStar(e.target.value)
-  console.log(star);
-}
-useEffect(()=>{
-  dataInit()
-  
-},[])
 
-useEffect(()=>{
-  dataStarFilter()
-  // eslint-disable-next-line
-},[star])
   return (
     <>
     <Search handleClick={handleClick}  handleChange={ handleChange} input={input} handleBack={handleBack}/>
 
-    {back?<ItemListContainer movies={movieSearch} handleStar={handleStar} star={star}/>:
-    <ItemListContainer movies={movieInit} handleStar={handleStar} star={star} movieStar={movieStar}/>
+    {
+
+
+    back ?
+    <ItemListContainer 
+    movies={movieSearch} 
+    back={back}
+    />:
+    <ItemListContainer
+    movies={movieInit} 
+    back={back} 
+    handleStar={handleStar} 
+    star={star} 
+    />
+      
+      
+  
     }
     </>
   )

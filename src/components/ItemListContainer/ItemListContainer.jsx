@@ -5,22 +5,22 @@ import './itemListContainer.css'
 
 
 
-const ItemListContainer = ({movies,handleStar,star,movieStar}) => {
-   
-
+const ItemListContainer = ({movies,handleStar,star,back}) => {
 
   return (
-    <div>
-        <div className='starFilter w-25 my-2'>
-            <h5>Filtar por :</h5>
+    <div  className='container_itemList'>
+        {
+        !back?<div className='starFilter'>
+          <h5>Filtar por :</h5>
          <Rating
             name="simple-controlled"
-            value={parseFloat(star)}
-            precision={0.1}
+            value={parseInt(star)}
+            precision={1}
             onChange={handleStar}
-        /> 
-        </div> 
-         {star=0? <MovieList movies={movies}/>:<MovieList movies={movieStar} />}
+            />       
+        </div> :''
+        }
+        <MovieList movies={movies}/> 
          
         
     </div>

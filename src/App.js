@@ -17,6 +17,7 @@ function App() {
     <NavBar />
     <Routes>
         <Route path="/" element={<Home />}/>
+        <Route path="/tv" element={<Home />}/>
     </Routes>  
 
   </BrowserRouter>
