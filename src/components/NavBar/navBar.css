@@ -2,4 +2,22 @@
 .active
 {   
     font-weight: 900;
+    color: var(--bg-grey-100);
+}
+ul
+{
+    display: flex;
+}
+ul li  a
+{
+    padding: 10px;
+   
+    color: var(--bg-grey-100);
+    text-decoration: none;
+}
+ul li  a:hover
+{
+    
+    color: #505050;
+    
 }

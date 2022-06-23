@@ -4,11 +4,10 @@ import {
   Route,
 } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 import './App.css';
 import Home from "./pages/Home/Home";
+
+
 
 
 function App() {

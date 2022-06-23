@@ -1,3 +1,16 @@
+.container_col
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-info
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
 .movieRow {
     cursor: pointer;
     position: relative;
@@ -39,3 +52,23 @@
   bottom: 20px;
 }
 
+
+/* 
+
+<div className="card movie-container " >
+    <img
+            className="card-img-top  movieEffects"
+            src={movie.poster_path ?`http://image.tmdb.org/t/p/w500/${movie.poster_path}`:"https://i.postimg.cc/j2tF5MtZ/no-disponible.png"} 
+            alt={movie.title}
+    />
+    <div className="card-body  movieCardInfo" >
+        <div className=" container-info row align-items-start">
+       
+            <div className="col">
+                <div className="realease-date pull-right text-right"><span>{movie.realease_Date}</span></div>
+            </div>
+        </div>
+        <div className="row justify-content-center mt-5">
+            <h6 className="movieTitle">{movie.title}</h6>
+        </div>
+    </div> */

@@ -1,11 +1,17 @@
+.container_itemList
+{
+    margin: auto;
+    margin-top: 20px;
+    padding: 25px;
+}
 .starFilter
 {
     display: flex;
     justify-content: center;
     align-items:center ;
     margin: auto;
-    width: 300px;
-    height: 6vh;
+    width: 250px;
+    height: 40px;
     background-color: var(--bg-grey-100);
     border-radius: 5px;
 
@@ -14,11 +20,4 @@
 .starFilter h5
 {
     color:var(--bg-black-50)
-}
-
-.container_itemList
-{
-    margin: auto;
-    margin-top: 20px;
-    padding: 30px;
 }

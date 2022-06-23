@@ -8,5 +8,6 @@
     background-size: cover;
     height: 70vh;
     position: relative;
+    border-radius: 1px;
     color: var(--text-white-900);
 }
