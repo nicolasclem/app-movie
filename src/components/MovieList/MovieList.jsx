@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
-import './movieList.css'
+
 
 
 const MovieList = ({movies}) => {

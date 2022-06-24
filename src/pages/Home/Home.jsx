@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import URL from '../../helpers/ApiUrl'
 import ItemListContainer from '../../components/ItemListContainer/ItemListContainer'
-import Search from '../../components/Search/Search'
+import Search from '../../components/Search/Search';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 
 
@@ -51,7 +54,15 @@ const Home = () => {
     setInput('')
     }
     else{
-      console.log("mandar mensajito q tiene q buscar");
+      toast.warn('🌈campo de busqueda Vacio!!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     }
   }
 
@@ -77,6 +88,16 @@ const Home = () => {
 
   return (
     <>
+    <ToastContainer position="top-right"
+      autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/> 
     <Search handleClick={handleClick}  handleChange={ handleChange} input={input} handleBack={handleBack}/>
 
     {

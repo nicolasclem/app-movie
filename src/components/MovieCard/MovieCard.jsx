@@ -4,11 +4,15 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { CardActionArea } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({movie}) => {
+  const navigate=useNavigate()
   return (
     <Card sx={{ width: 200,m:1 }}>
-    <CardActionArea >
+    <CardActionArea 
+    onClick={()=>navigate(`/movie/${movie.id}`)}
+    >
       <CardMedia
       sx={{height:300}}
         component="img"
