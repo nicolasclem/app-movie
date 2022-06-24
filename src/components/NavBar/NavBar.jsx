@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import logo from '../../assets/logo/logoMovie.png'
 import { Link, useLocation } from 'react-router-dom';
-import'./navBar.css'
+import'./navBar.css';
 
 
 const optionNav= [
@@ -49,21 +49,19 @@ export default function NavBar() {
             </Link>
           </IconButton>
           <Typography variant="p" component="div" sx={{ flexGrow: 1 }} >
-          <ul>{
-            optionNav.map((e,i)=>(
-                <li  key={i} className={`${i===active ?'active':''}`}>
-                <Link to={e.path}>
-                    {e.display}
-                </Link>
-                </li>
-            ))
-        }
-        </ul>
+              <ul>{
+                  optionNav.map((e,i)=>(
+                  <li  key={i} className={`${i===active ?'active':''}`}>
+                    <Link to={e.path}>
+                      {e.display}
+                    </Link>
+                  </li>
+                  ))
+                  }
+              </ul>
         </Typography>
         </Toolbar>
       </AppBar>
     </Box>
-
-    
   );
 }

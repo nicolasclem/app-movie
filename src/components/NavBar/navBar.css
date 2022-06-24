@@ -11,7 +11,6 @@ ul
 ul li  a
 {
     padding: 10px;
-   
     color: var(--bg-grey-100);
     text-decoration: none;
 }

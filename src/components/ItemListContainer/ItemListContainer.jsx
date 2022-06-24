@@ -12,17 +12,15 @@ const ItemListContainer = ({movies,handleStar,star,back}) => {
         {
         !back?<div className='starFilter'>
           <h5>Filtar por :</h5>
-         <Rating
+          <Rating
             name="simple-controlled"
             value={parseInt(star)}
             precision={1}
             onChange={handleStar}
-            />       
+          />       
         </div> :''
         }
         <MovieList movies={movies}/> 
-         
-        
     </div>
   )
 }
